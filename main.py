@@ -1,3 +1,4 @@
+# Créé par merle, le 23/09/2022 en Python 3.7
 # Créé par pouillieut, le 23/09/2022 en Python 3.7
 print("Bienvenue sur Tinder de Wish créer par Alexandre Merle et Yohann Pouillieute!\
        Nous vous invitons à créer votre profil!")
@@ -15,13 +16,13 @@ def check_if_18(age):
         exit()
     else:
         print("Veuillez continuer la création de votre compte")
-
+#Vérifier si il peut s'inscrire sur le site
 def filtres():
     if genre.get() == 1:
         genre = homme
     if genre.get() == 2:
         genre = femme
-
+#Vérifier le genre
     if caractere.get() == 1:
         caractere =agressif
     if caractere.get() == 2:
@@ -32,7 +33,7 @@ def filtres():
         caractere = fetard
     if caractere.get() == 5:
         caractere = passif
-
+#Type de caractères
     if signe_astro.get() == 1:
         astro = poisson
     if signe_astro.get() == 2:
@@ -43,6 +44,7 @@ def filtres():
         astro = gemaux
     if signe_astro.get() == 5:
         astro = capricorne
+#Signe astrologique
     if genre_music.get() == 1:
         music_genre = rock
     if genre_music.get() == 2:
@@ -51,6 +53,7 @@ def filtres():
         music_genre = pop
     if genre_music.get() == 4:
         music_genre = electro
+#Type de musique
 
     if orientation_sex.get() ==1:
         orientation = hetero
@@ -58,6 +61,8 @@ def filtres():
         orientation = lesbienne
     if orientation_sex.get() == 3:
         orientation = gay
+
+#Orientation sexuel
 
     if origine.get() == 1:
         origine = americain
@@ -67,6 +72,7 @@ def filtres():
         origine = espagnol
     if origine.get() == 4:
         origine = marocain
+#Originine de la personne
 
 def CreateNewWindow():
 # variables des cases cochées
