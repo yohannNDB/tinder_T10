@@ -1,12 +1,26 @@
 # Créé par pouillieut, le 23/09/2022 en Python 3.7
+from tkinter import *
+from random import randint,choice
+import string
+import tkinter as tk
+import time
+import tkinter.font as tkFont
+import random
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+
+
+
+
 print("Bienvenue sur Tinder de Wish créer par Alexandre Merle et Yohann Pouillieute!\
        Nous vous invitons à créer votre profil!")
-import bd
-jeankule = Caracteristique()
 
-genre = input("Êtes-vous un homme ou une femme? homme/femme")
+'''
+genre = input("Êtes-vous un homme ou une femme? homme/femme")'''
 nom_prenom = input("Pour commencer veuillez entrer votre Nom puis Prénom: ")
-age = input("Veuillez entrer votre âge:")
+age = input("Veuillez entrer votre âge: ")
 
 
 def check_if_18(age):
@@ -214,10 +228,10 @@ def CreateNewWindow():
 
 
 
-#caractéristiques du bouton "rechercher"
+#caractéristiques du bouton "Valider compte"
     button_rechercher = Button(window,text='Valider mon compte',bg='#FDD663',fg='black',\
                         font=("Roman",20),activeforeground='white',\
-                        activebackground='#048B9A',command=afficher_graphique)
+                        activebackground='#048B9A',command=afficher_graphique) ##changer la command
 
 
 
@@ -230,30 +244,43 @@ def CreateNewWindow():
     case_theme2_option1.place(x=580,y=180)
     case_theme2_option2.place(x=580,y=220)
     case_theme2_option3.place(x=580,y=260)
+    case_theme2_option4.place(x=1,y=1)
+    case_theme2_option5.place(x=1,y=1)
+
 
 #placements des options du theme 3
     case_theme3_option1.place(x=50,y=360)
     case_theme3_option2.place(x=50,y=400)
+    case_theme3_option3.place(x=50,y=400)
+    case_theme3_option4.place(x=50,y=400)
+    case_theme3_option5.place(x=50,y=400)
 
 #placements des options du theme 4
     case_theme4_option1.place(x=580,y=360)
     case_theme4_option2.place(x=580,y=400)
+    case_theme4_option3.place(x=580,y=400)
+    case_theme4_option4.place(x=580,y=400)
 
 #placements des options du theme 5
     case_theme4_option1.place(x=580,y=360)
     case_theme4_option2.place(x=580,y=400)
+    case_theme4_option3.place(x=580,y=360)
+
 
 
 #placements des options du theme 6
     case_theme4_option1.place(x=580,y=360)
     case_theme4_option2.place(x=580,y=400)
-#placement du bouton "rechercher"
+    case_theme4_option3.place(x=580,y=360)
+    case_theme4_option4.place(x=580,y=360)
+    case_theme4_option5.place(x=580,y=360)
+#placement du bouton "Valider Compte"
     button_rechercher.place(x=380,y=480)
 
 # création du menu en haut
     menu_bar = Menu(window)
     menu_fill = Menu(menu_bar, tearoff=0)
-    menu_fill.add_command(label="Choix des statistiques", command=CreateNewWindow)
+    menu_fill.add_command(label="Créer nouveau compte", command=CreateNewWindow)
     menu_fill.add_command(label="Quitter", command=Quitter)
     menu_bar.add_cascade(label="Fonction", menu=menu_fill)
     window.config(menu=menu_bar)
@@ -272,7 +299,7 @@ orientation = IntVar(master= window, value= 0)
 origine = IntVar(master= window, value= 0)
 
 #création de la fenêtre
-window.title("Tinder")
+window.title("Teender")
 window.geometry("710x444")
 window.config(background = "#048B9A")
 window.iconbitmap("titanic.ico")
@@ -288,7 +315,7 @@ image_bouton = PhotoImage(file="bouton_fond2.gif")
 #création de l'image de fond et du Titre
 canvas_pour_image = Canvas(window,width=1300,height=813, bg='white',bd=0,highlightthickness=0)
 canvas_pour_image.create_image(0,0,image = image_fond,anchor='nw')
-canvas_pour_image.create_text(20,150,text="Bienvenue dans l'applicationde statistiques du Titanic",\
+canvas_pour_image.create_text(20,150,text="Bienvenue sur Tinder de Wish",\
                              font=("Script",35),anchor='nw')
 canvas_pour_image.place(x=0,y=0)
 
@@ -298,7 +325,7 @@ menu_fill.add_command(label="Quitter", command=Quitter)
 menu_bar.add_cascade(label="Fonction", menu=menu_fill)
 window.config(menu=menu_bar)
 
-#boutton "commencer l'aventure" ansi que son placement dans la fenêtre
+#boutton "Lancer Tinder" ansi que son placement dans la fenêtre
 button1 = Button(window,image= image_bouton,borderwidth=0,\
                                 highlightthickness=0,command=CreateNewWindow)
 my_button1_window = canvas_pour_image.create_window\
