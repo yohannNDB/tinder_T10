@@ -1,4 +1,3 @@
-# Créé par merle, le 23/09/2022 en Python 3.7
 # Créé par pouillieut, le 23/09/2022 en Python 3.7
 print("Bienvenue sur Tinder de Wish créer par Alexandre Merle et Yohann Pouillieute!\
        Nous vous invitons à créer votre profil!")
@@ -16,13 +15,13 @@ def check_if_18(age):
         exit()
     else:
         print("Veuillez continuer la création de votre compte")
-#Vérifier si il peut s'inscrire sur le site
+
 def filtres():
     if genre.get() == 1:
         genre = homme
     if genre.get() == 2:
         genre = femme
-#Vérifier le genre
+
     if caractere.get() == 1:
         caractere =agressif
     if caractere.get() == 2:
@@ -33,7 +32,7 @@ def filtres():
         caractere = fetard
     if caractere.get() == 5:
         caractere = passif
-#Type de caractères
+
     if signe_astro.get() == 1:
         astro = poisson
     if signe_astro.get() == 2:
@@ -44,7 +43,6 @@ def filtres():
         astro = gemaux
     if signe_astro.get() == 5:
         astro = capricorne
-#Signe astrologique
     if genre_music.get() == 1:
         music_genre = rock
     if genre_music.get() == 2:
@@ -53,7 +51,6 @@ def filtres():
         music_genre = pop
     if genre_music.get() == 4:
         music_genre = electro
-#Type de musique
 
     if orientation_sex.get() ==1:
         orientation = hetero
@@ -61,8 +58,6 @@ def filtres():
         orientation = lesbienne
     if orientation_sex.get() == 3:
         orientation = gay
-
-#Orientation sexuel
 
     if origine.get() == 1:
         origine = americain
@@ -72,7 +67,8 @@ def filtres():
         origine = espagnol
     if origine.get() == 4:
         origine = marocain
-#Originine de la personne
+    if origine.get() == 5:
+        origine = None
 
 def CreateNewWindow():
 # variables des cases cochées
@@ -81,6 +77,7 @@ def CreateNewWindow():
     signe_astro.set(0)
     genre_music.set(0)
     orientation_sex.set(0)
+    origine.set(0)
 
 #destruction de l'ancienne image de fond, du texte et du bouton
     canvas_pour_image.delete(ALL)
@@ -106,7 +103,7 @@ def CreateNewWindow():
 
 
 
-#caractéristiques des options du theme 1
+#caractéristiques des options du thème 1
     case_theme1_option1 = Radiobutton(window,text ='Homme',bg='#FADF8F',\
                         fg='black',font=("Roman",15),activeforeground='white',\
                         activebackground='#048B9A',variable=sex,value=1)
@@ -114,37 +111,116 @@ def CreateNewWindow():
                         fg='black',font=("Roman",15),activeforeground='white',\
                         activebackground='#048B9A',variable=sex,value=2)
 
-#caractéristiques des options du theme 2
+#caractéristiques des options du thème 2
     case_theme2_option1 = Radiobutton(window,text ='agressif',bg='#FADF8F',\
                         fg='black',font=("Roman",15),activeforeground='white',\
                         activebackground='#048B9A',variable=classe,value=1)
-    case_theme2_option2 = Radiobutton(window,text ='2e Classe',bg='#FADF8F',\
+
+    case_theme2_option2 = Radiobutton(window,text ='romantic',bg='#FADF8F',\
                         fg='black',font=("Roman",15),activeforeground='white',
                         activebackground='#048B9A',variable=classe,value=2)
-    case_theme2_option3 = Radiobutton(window,text ='3e Classe',bg='#FADF8F',\
+
+    case_theme2_option3 = Radiobutton(window,text ='depressif',bg='#FADF8F',\
                         fg='black',font=("Roman",15),activeforeground='white',\
                         activebackground='#048B9A',variable=classe,value=3)
 
-#caractéristiques des options du theme 3
-    case_theme3_option1 = Radiobutton(window,text ='Mineur',bg='#FADF8F',\
+    case_theme2_option4 = Radiobutton(window,text ='fetard',bg='#FADF8F',\
+                        fg='black',font=("Roman",15),activeforeground='white',\
+                        activebackground='#048B9A',variable=classe,value=4)
+
+    case_theme2_option5 = Radiobutton(window,text ='passif',bg='#FADF8F',\
+                        fg='black',font=("Roman",15),activeforeground='white',\
+                        activebackground='#048B9A',variable=classe,value=5)
+
+
+
+#caractéristiques des options du thème 3
+    case_theme3_option1 = Radiobutton(window,text ='poisson',bg='#FADF8F',\
                         fg='black',font=("Roman",15),activeforeground='white',\
                         activebackground='#048B9A',variable=age,value=1)
-    case_theme3_option2 = Radiobutton(window,text ='Majeur',bg='#FADF8F',\
+
+    case_theme3_option2 = Radiobutton(window,text ='cancer',bg='#FADF8F',\
                         fg='black',font=("Roman",15),activeforeground='white',\
                         activebackground='#048B9A',variable=age,value=2)
 
-#caractéristiques des options du theme 4
-    case_theme4_option1 = Radiobutton(window,text ='Oui',bg='#FADF8F',fg='black',\
+    case_theme3_option3 = Radiobutton(window,text ='verge',bg='#FADF8F',\
+                        fg='black',font=("Roman",15),activeforeground='white',\
+                        activebackground='#048B9A',variable=age,value=3)
+
+    case_theme3_option4 = Radiobutton(window,text ='gemaux',bg='#FADF8F',\
+                        fg='black',font=("Roman",15),activeforeground='white',\
+                        activebackground='#048B9A',variable=age,value=4)
+
+    case_theme3_option5 = Radiobutton(window,text ='capricorne',bg='#FADF8F',\
+                        fg='black',font=("Roman",15),activeforeground='white',\
+                        activebackground='#048B9A',variable=age,value=5)
+
+#caractéristiques des options du thème 4
+    case_theme4_option1 = Radiobutton(window,text ='rock',bg='#FADF8F',fg='black',\
                         font=("Roman",15),activeforeground='white',
                         activebackground='#048B9A',variable=état,value=1)
-    case_theme4_option2 = Radiobutton(window,text ='Non',bg='#FADF8F',fg='black',\
+
+    case_theme4_option2 = Radiobutton(window,text ='rap',bg='#FADF8F',fg='black',\
                         font=("Roman",15),activeforeground='white',
                         activebackground='#048B9A',variable=état,value=2)
 
+    case_theme4_option3 = Radiobutton(window,text ='pop',bg='#FADF8F',fg='black',\
+                        font=("Roman",15),activeforeground='white',
+                        activebackground='#048B9A',variable=état,value=3)
+
+    case_theme4_option4 = Radiobutton(window,text ='electro',bg='#FADF8F',fg='black',\
+                        font=("Roman",15),activeforeground='white',
+                        activebackground='#048B9A',variable=état,value=4)
+
+
+    #caractéristiques des options du thème 5
+    case_theme5_option1 = Radiobutton(window,text ='hetero',bg='#FADF8F',fg='black',\
+                        font=("Roman",15),activeforeground='white',
+                        activebackground='#048B9A',variable=état,value=1)
+
+    case_theme5_option2 = Radiobutton(window,text ='lesbienne',bg='#FADF8F',fg='black',\
+                        font=("Roman",15),activeforeground='white',
+                        activebackground='#048B9A',variable=état,value=2)
+
+    case_theme5_option3 = Radiobutton(window,text ='gay',bg='#FADF8F',fg='black',\
+                        font=("Roman",15),activeforeground='white',
+                        activebackground='#048B9A',variable=état,value=3)
+
+
+    #caractéristiques des options du thème 6
+    case_theme6_option1 = Radiobutton(window,text ='americain',bg='#FADF8F',fg='black',\
+                        font=("Roman",15),activeforeground='white',
+                        activebackground='#048B9A',variable=état,value=1)
+
+    case_theme6_option2 = Radiobutton(window,text ='francais',bg='#FADF8F',fg='black',\
+                        font=("Roman",15),activeforeground='white',
+                        activebackground='#048B9A',variable=état,value=2)
+
+
+    case_theme6_option3 = Radiobutton(window,text ='espagnol',bg='#FADF8F',fg='black',\
+                        font=("Roman",15),activeforeground='white',
+                        activebackground='#048B9A',variable=état,value=3)
+
+
+    case_theme6_option4 = Radiobutton(window,text ='marocain',bg='#FADF8F',fg='black',\
+                        font=("Roman",15),activeforeground='white',
+                        activebackground='#048B9A',variable=état,value=4)
+
+
+    case_theme6_option5 = Radiobutton(window,text ='autre',bg='#FADF8F',fg='black',\
+                        font=("Roman",15),activeforeground='white',
+                        activebackground='#048B9A',variable=état,value=5)
+
+
+
+
 #caractéristiques du bouton "rechercher"
-    button_rechercher = Button(window,text='rechercher',bg='#FDD663',fg='black',\
+    button_rechercher = Button(window,text='Valider mon compte',bg='#FDD663',fg='black',\
                         font=("Roman",20),activeforeground='white',\
                         activebackground='#048B9A',command=afficher_graphique)
+
+
+
 
 #placements des options du theme 1
     case_theme1_option1.place(x=50,y=180)
@@ -163,6 +239,14 @@ def CreateNewWindow():
     case_theme4_option1.place(x=580,y=360)
     case_theme4_option2.place(x=580,y=400)
 
+#placements des options du theme 5
+    case_theme4_option1.place(x=580,y=360)
+    case_theme4_option2.place(x=580,y=400)
+
+
+#placements des options du theme 6
+    case_theme4_option1.place(x=580,y=360)
+    case_theme4_option2.place(x=580,y=400)
 #placement du bouton "rechercher"
     button_rechercher.place(x=380,y=480)
 
@@ -180,13 +264,15 @@ def CreateNewWindow():
 window = Tk()
 
 # variables des cases cochées
-sex = IntVar(master= window, value= 0)
-classe = IntVar(master= window, value= 0)
-age = IntVar(master= window, value= 0)
-état = IntVar(master= window, value= 0)
+genre = IntVar(master= window, value= 0)
+caractere = IntVar(master= window, value= 0)
+signe_astro = IntVar(master= window, value= 0)
+music_genre = IntVar(master= window, value= 0)
+orientation = IntVar(master= window, value= 0)
+origine = IntVar(master= window, value= 0)
 
 #création de la fenêtre
-window.title("Statistiques du Titanic")
+window.title("Tinder")
 window.geometry("710x444")
 window.config(background = "#048B9A")
 window.iconbitmap("titanic.ico")
