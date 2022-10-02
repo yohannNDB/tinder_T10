@@ -1,5 +1,10 @@
 # Cree par merle, le 23/09/2022 en Python 3.7
-import random
+
+
+from main2 import*
+
+from profilePersonnage import*
+
 
 class Caracteristiques():
     def __init__(self,genre,age,caractere, music_genre, astro, orientation, origine):
@@ -42,16 +47,16 @@ class Profil():
 
 
 
-Jean_Kule = Caracteristiques\
+Jean_Pierre = Caracteristiques\
             ("18","homme","romantic","rap","taureau","gay","americain")
 
-Magg_Rosbeat = Caracteristiques\
+Magg_Azine = Caracteristiques\
             ("87","femme","agressif","rock","vierge","lesbienne","americain")
 
 Fany_Epi = Caracteristiques\
             ("45","femme","depressif","rap","gemaux","hetero","marocain")
 
-Faustine_MuletLaLibido= Caracteristiques\
+Faustine_Tirer= Caracteristiques\
             ("25","femme","fetard","pop","poisson","hetero","espagnol")
 
 Erwan_Erforsouhone= Caracteristiques\
@@ -75,16 +80,16 @@ Laurent_Outan = Caracteristiques\
 Scott_Che = Caracteristiques\
             ("26","homme","romantic","rap","taureau","hetero","americain")
 
-Jessica_Pote = Caracteristiques\
+Jessica_Noe = Caracteristiques\
             ("19","femme","fetard","rock","gemaux","hetero","espagnol")
 
 Juliette_Suin = Caracteristiques\
             ("18","femme","agressif","pop","taureau","hetero", "francais")
 
-personnages = [Jean_Kule,\
-               Jessica_Pote,\
-               Magg_Rosbeat,\
-               Faustine_MuletLaLibido,\
+personnages = [Jean_Pierre,\
+               Jessica_Noe,\
+               Magg_Azine,\
+               Faustine_Tirer,\
                Scott_Che,\
                ElsaRose_LaPlante,\
                Laurent_Outan,\
@@ -94,6 +99,8 @@ personnages = [Jean_Kule,\
                Erwan_Erforsouhone,\
                Fany_Epi,\
                Juliette_Suin]
+
+
 
 
 
@@ -164,7 +171,7 @@ def check_astro():
     while True:
         try:
             astro = input("Entrer votre signe astrologique:\
-             poisson/cancer/verge/gemaux/capricorne: ")
+             poisson/taureau/verge/gemaux/capricorne: ")
         except ValueError:
             print("Ceci est une réponse non acceptée, entrez une valeur valide")
             continue
@@ -200,22 +207,45 @@ def check_nationality():
     return origine
 
 
-
 Nom_prenom = Profil(\
-             check_for_age(), \
+                 check_for_age(), \
 
-             check_genre(),\
+                 check_genre(),\
 
-             check_caractere(),\
+                 check_caractere(),\
 
-             check_style_musique_pref(),\
+                 check_style_musique_pref(),\
 
-             check_astro(),\
+                 check_astro(),\
 
-             check_orientation_sex(),\
+                 check_orientation_sex(),\
 
-             check_nationality()
-             )
+                 check_nationality()
+                 )
+
+profil_utilisateur =\
+    "Votre profil: \n"\
+    "Vous êtes un(e) "\
+    +str(Nom_prenom.Genre)\
+    + " de " +str(Nom_prenom.Age) \
+    +" ans et vous êtes plutôt "\
+    +str(Nom_prenom.Caractere)+".\n"\
+    +"Votre style de musique préféré est le/la "\
+    +str(Nom_prenom.Music_genre)+".\n"\
+    +"Vous êtes un "\
+    +str(Nom_prenom.Astro) \
+    +". \n"\
+    +"Vous êtes "\
+    +str(Nom_prenom.Orientation_sex)\
+    +" et vous êtes "\
+    +str(Nom_prenom.Origine)
+
+print(profil_utilisateur)
+
+
+
+
+
 
 def dist_hamming(m1,m2):
     d = abs(len(m1)-len(m2))
@@ -288,11 +318,10 @@ def check_for_match(Nom_prenom,someone):
 
 
 
-
-print(Juliette_Suin)
-
-def match(possible_match):
+def main():
     pass
+
+
 
 
 
