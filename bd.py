@@ -1,13 +1,10 @@
-# Cree par merle, le 23/09/2022 en Python 3.7
+import random
+from main import*
 
-
-from main2 import*
-
-from profilePersonnage import*
 
 
 class Caracteristiques():
-    def __init__(self,genre,age,caractere, music_genre, astro, orientation, origine):
+    def __init__(self,age,genre,caractere, music_genre, astro, orientation, origine):
         self.age = age
         self.genre=genre
         self.caractere= caractere
@@ -15,16 +12,23 @@ class Caracteristiques():
         self.music_genre = music_genre
         self.orientation_sex = orientation
         self.origine = origine
-        def __changer_orientation_sexuelle_femme(self,nouvelle_orientation):
-            if nouvelle_orientation == self.orientation_sex:
-                print("C'est la même orientation ! :  " + str (nouvelle_orientation))
-            else:
-                self.orientation_sex = nouvelle_orientation
-                print( "Votre nouvelle orientation: "+ str(nouvelle_orientation))
-            return print(nouvelle_orientation)
-        def __str__(self):
-            return  str(self.__class__) \
-            + '\n'+ '\n'.join(('{} = {}'.format(item, self.__dict__[item]) for item in self.__dict__))
+    def presenter(self):
+        texte = "Le profil de :" +str(possible-match[i]) + "\n"\
+        "C'est un(e) "\
+        +str(self.genre)\
+        + " de " +str(self.age) \
+        +" ans et il/elle est "\
+        +str(self.caractere)+".\n"\
+        +"Son style de musique préféré est le/la "\
+        +str(self.music_genre)+".\n"\
+        +"C'est un(e) "\
+        +str(self.astro) \
+        +". \n"\
+        +"C'est un(e) "\
+        +str(self.orientation_sex)\
+        +" et il/elle est "\
+        +str(self.origine)
+        print(texte)
 
 
 class Profil():
@@ -36,55 +40,48 @@ class Profil():
         self.Astro = astro
         self.Orientation_sex = orientation
         self.Origine = origine
-        def __changer_orientation_sexuelle_homme(self,nouvelle_orientation):
-            if nouvelle_orientation == self.orientation_sex:
-                print("C'est la même orientation ! :  " + str (nouvelle_orientation))
-            else:
-                self.orientation_sex = nouvelle_orientation
-                print( "Votre nouvelle orientation: "+ str(nouvelle_orientation))
-            return print(nouvelle_orientation)
 
 
 
 
 Jean_Pierre = Caracteristiques\
-            ("18","homme","romantic","rap","taureau","gay","americain")
+            (18,"homme","romantic","rap","taureau","gay","americain")
 
 Magg_Azine = Caracteristiques\
-            ("87","femme","agressif","rock","vierge","lesbienne","americain")
+            (87,"femme","agressif","rock","vierge","lesbienne","americain")
 
 Fany_Epi = Caracteristiques\
-            ("45","femme","depressif","rap","gemaux","hetero","marocain")
+            (45,"femme","depressif","rap","gemaux","hetero","marocain")
 
 Faustine_Tirer= Caracteristiques\
-            ("25","femme","fetard","pop","poisson","hetero","espagnol")
+            (25,"femme","fetard","pop","poisson","hetero","espagnol")
 
 Erwan_Erforsouhone= Caracteristiques\
-            ("30","homme","passif","rock","capricorne","hetero","marocain")
+            (30,"homme","passif","rock","capricorne","hetero","marocain")
 
 Eugène_Nocide= Caracteristiques\
-            ("24","homme","agressif","electro","vierge","hetero", "francais")
+            (24,"homme","agressif","electro","vierge","hetero", "francais")
 
 Eva_Nouie = Caracteristiques\
-            ("46","femme","romantic","pop","poisson","hetero","français")
+            (46,"femme","romantic","pop","poisson","hetero","français")
 
 Frank_NStein = Caracteristiques\
-            ("86","homme","agressif","rock","gemaux","gay","americain")
+            (86,"homme","agressif","rock","gemaux","gay","americain")
 
 ElsaRose_LaPlante = Caracteristiques\
-            ("22","femme","depressif","rap","capricorne","lesbienne","espagnol")
+            (22,"femme","depressif","rap","capricorne","lesbienne","espagnol")
 
 Laurent_Outan = Caracteristiques\
-            ("35","homme","fetard","pop","poisson","hetero","francais")
+            (35,"homme","fetard","pop","poisson","hetero","francais")
 
 Scott_Che = Caracteristiques\
-            ("26","homme","romantic","rap","taureau","hetero","americain")
+            (26,"homme","romantic","rap","taureau","hetero","americain")
 
 Jessica_Noe = Caracteristiques\
-            ("19","femme","fetard","rock","gemaux","hetero","espagnol")
+            (19,"femme","fetard","rock","gemaux","hetero","espagnol")
 
 Juliette_Suin = Caracteristiques\
-            ("18","femme","agressif","pop","taureau","hetero", "francais")
+            (18,"femme","agressif","pop","taureau","hetero", "francais")
 
 personnages = [Jean_Pierre,\
                Jessica_Noe,\
@@ -109,14 +106,13 @@ Nom_prenom = input("Entrer votre nom et votre prenom: ")
 
 #vérifie l'age de la personne qui veut s'inscrire
 def check_for_age():
-    while True:
+    while True :
         try:
             age = int(input("Entrer votre age: "))
         #si l'age n'est pas un entier,
         #la fonction redemande un autre age (ex: eight au lieu de 8)
         except ValueError:
             print("Ceci est une réponse non acceptée, entrez une valeur valide")
-            continue
         else:
             break
     #verifie sur l'utilisateur est majeur. si pas majeur alors le programme s'arrete
@@ -134,12 +130,21 @@ def check_genre():
         try:
             genre = input("Entrer votre genre\
             homme/femme: ")
-        except ValueError:
+        except is_valid_genre(genre):
             print("Ceci est une réponse non acceptée, entrez une valeur valide")
-            continue
         else:
             break
+
     return genre
+
+
+
+
+def is_valid_genre(genre):
+    rep = True
+    authorized_char =["femme","homme"]
+    if char in genre not in authorized_char:
+        rep = Falsef
 
 
 def check_caractere():
@@ -149,7 +154,6 @@ def check_caractere():
              romantic/agressif/depressif/fetard/passif: ")
         except ValueError:
             print("Ceci est une réponse non acceptée, entrez une valeur valide")
-            continue
         else:
             break
     return caractere
@@ -162,7 +166,6 @@ def check_style_musique_pref():
              rap/pop/electro/rock: ")
         except ValueError:
             print("Ceci est une réponse non acceptée, entrez une valeur valide")
-            continue
         else:
             break
     return music_genre
@@ -207,21 +210,38 @@ def check_nationality():
     return origine
 
 
+a = check_for_age()
+b = check_genre()
+c = check_caractere()
+d = check_style_musique_pref()
+e = check_astro()
+f = check_orientation_sex()
+g = check_nationality()
+
+
+
+
+
+
+
 Nom_prenom = Profil(\
-                 check_for_age(), \
+                 a, \
 
-                 check_genre(),\
+                 b,\
 
-                 check_caractere(),\
+                 c,\
 
-                 check_style_musique_pref(),\
+                 d,\
 
-                 check_astro(),\
+                 e,\
 
-                 check_orientation_sex(),\
+                 f,\
 
-                 check_nationality()
-                 )
+                 g)
+
+
+##Nom_prenom = Profil(25,"femme","passif","rap","poisson","gay","americain")
+print(str(Nom_prenom.Age))
 
 profil_utilisateur =\
     "Votre profil: \n"\
@@ -241,6 +261,24 @@ profil_utilisateur =\
     +str(Nom_prenom.Origine)
 
 print(profil_utilisateur)
+
+
+
+
+
+
+definitiv_match = []
+def main(possible_match):
+    for i in range(len(possible_match)):
+        possible_match[i].presenter()
+        print("Voulez vous choisir ce profil comme un match ou un non match: ")
+        choix = input("1 pour match, 2 pour non match")
+        if choix ==1:
+            definitiv_match.append(possible_match[i])
+        else:
+            possible_match.remove(possible_match[i])
+
+
 
 
 
@@ -272,54 +310,184 @@ def distance_hamming_rec(m1,m2,cache=None):
         return cache[m1,m2]
 
 
-print(str(Nom_prenom))
+
+
 possible_match = []
 not_possible_match = []
-
-
-
-def check_for_match(Nom_prenom,someone):
-    A = Nom_prenom.genre
-    a = someone.genre
-    B = Nom_prenom.orientation_sex
-    b = someone.orientation_sex
-    C = Nom_prenom.origine
-    c = someone.origine
+def check_for_match(Nom_prenom,personnages):
     #condition d'arrêt
     if personnages == []:
         print("Les personnes pouvant match avec vous sont: " +str(possible_match))
-    #Verifie si meme tranche d'age
-    elif Nom_prenom.Age < 28 and someone.age < 28:
-        #Si l'écart entre variable A et a ==2 cest donc un homme et une femme
-        if distance_hamming_rec(A,a,cache=None) == 2:
-            if distance_hamming_rec(B,b) == 0:
-                if distance_hamming_rec(C,c) > 5:
+        return main(possible_match)
+    else:
+        someone = random.choice(personnages)
+        #definie le personnage comparé au profil uilisateur
+        #variables que l'on utilisera
+        A = Nom_prenom.Genre#genre de l'utilisateur
+        a = someone.genre#genre du personnage
+        B = Nom_prenom.Orientation_sex#orientation sexuelle utilisateur
+        b = someone.orientation_sex#orientation sexuelle personnage
+        C = Nom_prenom.Origine#origine utilisateur
+        c = someone.origine#origine personnage
+        utilisateur = Nom_prenom.Age
+        mec = someone.age
+        texte = str(Nom_prenom.Age),someone.age
+        print(texte)
+        print(type(mec))
+        print(type(utilisateur))
+        #Verifie si meme tranche d'age
+        if utilisateur <= 28 and mec < 28:
+
+            #Si l'écart entre variable A et a ==2 cest donc un homme et une femme
+            if distance_hamming_rec(A,a,cache=None) == 2:
+                #Si orientation sexuelle différente c'est mort
+                if distance_hamming_rec(B,b) == 0:
                     possible_match.append(someone)
+                    personnages.remove(someone)
+                    check_for_match(Nom_prenom,personnages)
                 else:
                     not_possible_match.append(someone)
+                    personnages.remove(someone)
+                    check_for_match(Nom_prenom,personnages)
 
-        else:
-            #Sinon c'est soit un gay soit une lesbienne
-            if distance_hamming_rec(A,a,cache=None) == 0:
-                if distance_hamming_rec(self.Orientation_sex,self.orientation_sex,cache=None) == 0:
-                    if distance_hamming_rec(self.Origine,self.origine,cache=None) == 0:
-                        return True
-                    elif distance_hamming_rec(self.Origine,self.origine,cache=None) == 1:
-                        pass
+
+            else:
+                #Sinon c'est soit un gay soit une lesbienne
+                if distance_hamming_rec(A,a,cache=None) == 0:
+                    if distance_hamming_rec(B,b,cache=None) == 0:
+                        possible_match.append(someone)
+                        personnages.remove(someone)
+                        check_for_match(Nom_prenom,personnages)
+                    else:
+                        not_possible_match.append(someone)
+                        personnages.remove(someone)
+                        check_for_match(Nom_prenom,personnages)
+                else:
+                    not_possible_match.append(someone)
+                    personnages.remove(someone)
+                    check_for_match(Nom_prenom,personnages)
+
+
+
+        elif Nom_prenom.Age >= 28 and Nom_prenom.Age <= 38\
+        and someone.age >= 28 and someone.age <= 38:
+            #Si l'écart entre variable A et a ==2 cest donc un homme et une femme
+            if distance_hamming_rec(A,a,cache=None) == 2:
+                #Si orientation sexuelle différente c'est mort
+                if distance_hamming_rec(B,b) == 0:
+                    possible_match.append(someone)
+                    check_for_match(Nom_prenom,personnages)
 
                 else:
-                    pretendant.remove(someone)
-                    return False
+                    not_possible_match.append(someone)
+                    personnages.remove(someone)
+                    check_for_match(Nom_prenom,personnages)
+
+            else:
+                #Sinon c'est soit un gay soit une lesbienne
+                if distance_hamming_rec(A,a,cache=None) == 0:
+                    if distance_hamming_rec(B,b,cache=None) == 0:
+                        possible_match.append(someone)
+                        personnages.remove(someone)
+                        check_for_match(Nom_prenom,personnages)
+
+                    else:
+                        not_possible_match.append(someone)
+                        personnages.remove(someone)
+                        check_for_match(Nom_prenom,personnages)
+
+                else:
+                    not_possible_match.append(someone)
+                    personnages.remove(someone)
+                    check_for_match(Nom_prenom,personnages)
 
 
-    elif self.Age > 28 and self.Age < 38 and self.age >28 and self.age < 38:
-        pass
+
+        #categorie d'age 38-55
+        elif Nom_prenom.Age > 38 and Nom_prenom.Age <= 55 and someone.age > 38 and someone.age <= 55:
+
+
+            #Si l'écart entre variable A et a ==2 cest donc un homme et une femme
+            if distance_hamming_rec(A,a,cache=None) == 2:
+                #Si orientation sexuelle différente c'est mort
+                if distance_hamming_rec(B,b) == 0:
+                    possible_match.append(someone)
+                    personnages.remove(someone)
+                    check_for_match(Nom_prenom,personnages)
+                else:
+                    not_possible_match.append(someone)
+                    personnages.remove(someone)
+                    check_for_match(Nom_prenom,personnages)
+
+            else:
+                #Sinon c'est soit un gay soit une lesbienne
+                if distance_hamming_rec(A,a,cache=None) == 0:
+                    if distance_hamming_rec(B,b,cache=None) == 0:
+                        possible_match.append(someone)
+                        personnages.remove(personnages)
+                        check_for_match(Nom_prenom,personnages)
+                    else:
+                        not_possible_match.append(someone)
+                        personnages.remove(someone)
+                    check_for_match(Nom_prenom,personnages)
+                else:
+                    not_possible_match.append(someone)
+                    personnages.remove(someone)
+                    check_for_match(Nom_prenom,personnages)
+
+
+
+        else:
+            #Si l'écart entre variable A et a ==2 cest donc un homme et une femme
+            if distance_hamming_rec(A,a,cache = None) == 2:
+                #Si orientation sexuelle différente c'est mort
+                if distance_hamming_rec(B,b) == 0:
+                    #si origine différente on considère qu'à cet age
+                    #la personne ne fera pas le déplacement
+                    if distance_hamming_rec(C,c,cache = None) == 0:
+                        possible_match.append(someone)
+                        personnages.remove(someone)
+                        check_for_match(Nom_prenom,personnages)
+
+                    else:
+                        not_possible_match.append(someone)
+                        personnages.remove(someone)
+                        check_for_match(Nom_prenom,personnages)
+                else:
+                    not_possible_match.append(someone)
+                    personnages.remove(someone)
+                    check_for_match(Nom_prenom,personnages)
+
+            else:
+                #Sinon c'est soit un gay soit une lesbienne
+                if distance_hamming_rec(A,a,cache = None) == 0:
+                    #verifier si les deux sont GAY ou LESBIENNE
+                    if distance_hamming_rec(B,b,cache = None) == 0:
+                        possible_match.append(someone)
+                        personnages.remove(someone)
+                        check_for_match(Nom_prenom,personnages)
+                    else:
+                        not_possible_match.append(someone)
+                        personnages.remove(someone)
+                        check_for_match(Nom_prenom,personnages)
+                else:
+                    not_possible_match.append(someone)
+                    personnages.remove(someone)
+                    check_for_match(Nom_prenom,personnages)
 
 
 
 
-def main():
-    pass
+check_for_match(Nom_prenom,personnages)
+
+
+
+
+
+
+
+
+
 
 
 
