@@ -210,34 +210,21 @@ def check_nationality():
     return origine
 
 
-a = check_for_age()
-b = check_genre()
-c = check_caractere()
-d = check_style_musique_pref()
-e = check_astro()
-f = check_orientation_sex()
-g = check_nationality()
-
-
-
-
-
-
 
 Nom_prenom = Profil(\
-                 a, \
+                 check_for_age(), \
 
-                 b,\
+                 check_genre(),\
 
-                 c,\
+                 check_caractere(),\
 
-                 d,\
+                 check_style_musique_pref(),\
 
-                 e,\
+                 check_astro(),\
 
-                 f,\
+                 check_orientation_sex(),\
 
-                 g)
+                 check_nationality())
 
 
 ##Nom_prenom = Profil(25,"femme","passif","rap","poisson","gay","americain")
