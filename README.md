@@ -38,4 +38,4 @@ __4)Comment vérifier si une personne peut match avec le profil_utilisateur ?__
 Après avoir défini chacun des personnages, nous avons réfléchi à la fonction match. Pour réaliser cette fonction complexe, nous avons décidé d'utiliser la __récursivité__ et comparer les différences entre l'utilisateur et les personnages prédéfinis grâce à la distance d'__Hamming__. Nous avons simultanément créé le profil utilisateur avec des __input__ qui nous pose des questions qui permettent de définir les caractéristiques que nous avons dans la __class Profil__. Nous ferons alors une présélection des personnes ressemblants sur certaines caractéristiques à notre profil_utilisateur
 
 __5)Le choix final!__
-Enfin 
+Enfin nous allons laisser le choix à l'utilisateur de match ou non avec certaines personnes. Il pourra soit match et la personne sera alors dans ses favoris ou alors il enlevera la personne de ses recommandés.
