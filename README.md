@@ -5,6 +5,12 @@ Temps pour réaliser le projet : environ 15h
 
 # Notre Projet:
 ![logo tinder](https://boncoo.ovh/wp-content/uploads/2017/12/Logo-Tinder.svg_.png)
+
+
+## Présentation de Tinder:
+- [wikidia de Tinder](https://fr.wikipedia.org/wiki/Tinder)
+
+
 ## Présentation du projet:
 __1)Les difficultés:__
 
