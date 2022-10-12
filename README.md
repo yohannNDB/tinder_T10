@@ -1,7 +1,8 @@
-# tinder_T10
+#### Participants:
 * Alexandre Merle
 * Yohann Pouillieute
 # Notre Projet:
+![logo tinder](https://boncoo.ovh/wp-content/uploads/2017/12/Logo-Tinder.svg_.png)
 ## Présentation du projet:
 __1) Les difficultés:__
 
