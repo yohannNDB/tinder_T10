@@ -151,20 +151,10 @@ Nous ferons une présélection des personnes ressemblants sur certaines caracté
 
 
 
-```
- if distance_hamming_rec(A,a,cache=None) == 2:
-    #Si orientation sexuelle différente c'est mort
-    if distance_hamming_rec(B,b) == 0:
-      possible_match.append(someone)
-      personnages.remove(someone)
-      check_for_match(Nom_prenom,personnages)
-    else:
-      not_possible_match.append(someone)
-      personnages.remove(someone)
-      check_for_match(Nom_prenom,personnages)
-```
 __5)Le choix final!__
-Enfin nous allons laisser le choix à l'utilisateur de match ou non avec certaines personnes. Il pourra soit match et la personne sera alors dans ses favoris ou alors il enlevera la personne de ses recommandés.
+
+
+Enfin nous allons laisser le choix à l'utilisateur de match ou non avec certaines personnes. Il pourra soit match et la personne sera alors dans ses favoris ou alors il enlevera la personne de ses recommandations.
 
 
 ```
