@@ -253,23 +253,26 @@ print("--"*30)
 definitiv_match = []
 def main(i,possible_match):
     if possible_match == [None,[]] or i> len(possible_match):
-        print( definitiv_match)
+        print(definitiv_match)
     else:
         possible_match[i].presenter()
 
         print("Voulez vous choisir ce profil comme un match ou un non match: ")
-        choix = input("1 pour matcher, 2 pour ne pas matcher")
+        choix = int(input("1 pour matcher, 2 pour ne pas matcher"))
+        print(choix)
         if choix == 1:
             definitiv_match.append(possible_match[i])
             possible_match.remove(possible_match[i])
-            main(i+1 ,possible_match)
+            print("--"*25)
+            return main(i+1 ,possible_match)
 
-        else:
+        elif choix == 2:
             possible_match.remove(possible_match[i])
             print("Vous avez fait le bon choix ;)")
-            print("--"*15)
-            main(i+1 ,possible_match)
-
+            print("--"*25)
+            return main(i+1 ,possible_match)
+        else:
+            print("rien")
 
 '''
     for i in range(possible_match):
