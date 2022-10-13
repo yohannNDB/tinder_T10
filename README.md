@@ -133,7 +133,7 @@ Pour réaliser cette fonction complexe, nous avons décidé d'utiliser la __réc
 
 Nous avons simultanément créé le profil utilisateur avec des ```input```qui nous pose des questions qui permettent de définir les caractéristiques que nous avons dans la ```class Profil```. 
 
-Nous ferons une présélection des personnes ressemblants sur certaines caractéristiques à notre profil_utilisateur pour lui permettre de passer moins de temps à chercher sa dulciné.
+Nous ferons une présélection des personnes ressemblants sur certaines caractéristiques à notre profil_utilisateur pour lui permettre de passer moins de temps à chercher.
 
 
 ```
@@ -158,15 +158,25 @@ Enfin nous allons laisser le choix à l'utilisateur de match ou non avec certain
 
 
 ```
- def main(possible_match):
-    for i in range(len(possible_match)):
+ def main(i,possible_match):
+    if possible_match == [None,[]] or i> len(possible_match):
+        print( definitiv_match)
+    else:
         possible_match[i].presenter()
+
         print("Voulez vous choisir ce profil comme un match ou un non match: ")
-        choix = input("1 pour match, 2 pour non match")
-        if choix ==1:
+        choix = input("1 pour matcher, 2 pour ne pas matcher")
+        if choix == 1:
             definitiv_match.append(possible_match[i])
+            possible_match.remove(possible_match[i])
+            main(i+1 ,possible_match)
+
         else:
             possible_match.remove(possible_match[i])
+            print("Vous avez fait le bon choix ;)")
+            print("--"*15)
+            main(i+1 ,possible_match)
+
 
 ```
 On utilise ici la méthode de la POO pour présenter le profil des personnages choisis durant la préselection. 
