@@ -1,10 +1,9 @@
 import random
-from main import*
-
 
 
 class Caracteristiques():
-    def __init__(self,age,genre,caractere, music_genre, astro, orientation, origine):
+    def __init__(self,name,age,genre,caractere, music_genre, astro, orientation, origine):
+        self.name = name
         self.age = age
         self.genre=genre
         self.caractere= caractere
@@ -13,7 +12,7 @@ class Caracteristiques():
         self.orientation_sex = orientation
         self.origine = origine
     def presenter(self):
-        texte = "Le profil de :" +str(possible-match[i]) + "\n"\
+        texte = "Le profil de " +str(self.name) + "\n"\
         "C'est un(e) "\
         +str(self.genre)\
         + " de " +str(self.age) \
@@ -28,6 +27,7 @@ class Caracteristiques():
         +str(self.orientation_sex)\
         +" et il/elle est "\
         +str(self.origine)
+
         print(texte)
 
 
@@ -45,43 +45,43 @@ class Profil():
 
 
 Jean_Pierre = Caracteristiques\
-            (18,"homme","romantic","rap","taureau","gay","americain")
+            ("Jean Pierre",18,"homme","romantic","rap","taureau","gay","americain")
 
 Magg_Azine = Caracteristiques\
-            (87,"femme","agressif","rock","vierge","lesbienne","americain")
+            ("Magg Azine",87,"femme","agressif","rock","vierge","lesbienne","americain")
 
 Fany_Epi = Caracteristiques\
-            (45,"femme","depressif","rap","gemaux","hetero","marocain")
+            ("Fany Epi",45,"femme","depressif","rap","gemaux","hetero","marocain")
 
 Faustine_Tirer= Caracteristiques\
-            (25,"femme","fetard","pop","poisson","hetero","espagnol")
+            ("Faustine Tirer",25,"femme","fetard","pop","poisson","hetero","espagnol")
 
 Erwan_Erforsouhone= Caracteristiques\
-            (30,"homme","passif","rock","capricorne","hetero","marocain")
+            ("Erwan Erforsouhone",30,"homme","passif","rock","capricorne","hetero","marocain")
 
 Eugène_Nocide= Caracteristiques\
-            (24,"homme","agressif","electro","vierge","hetero", "francais")
+            ("Eugène Nocide",24,"homme","agressif","electro","vierge","hetero", "francais")
 
 Eva_Nouie = Caracteristiques\
-            (46,"femme","romantic","pop","poisson","hetero","français")
+            ("Eva Nouie",46,"femme","romantic","pop","poisson","hetero","français")
 
 Frank_NStein = Caracteristiques\
-            (86,"homme","agressif","rock","gemaux","gay","americain")
+            ("FrankNstein",86,"homme","agressif","rock","gemaux","gay","americain")
 
 ElsaRose_LaPlante = Caracteristiques\
-            (22,"femme","depressif","rap","capricorne","lesbienne","espagnol")
+            ("Elsa-rose Laplante",22,"femme","depressif","rap","capricorne","lesbienne","espagnol")
 
 Laurent_Outan = Caracteristiques\
-            (35,"homme","fetard","pop","poisson","hetero","francais")
+            ("Laurent Outan",35,"homme","fetard","pop","poisson","hetero","francais")
 
 Scott_Che = Caracteristiques\
-            (26,"homme","romantic","rap","taureau","hetero","americain")
+            ("Scott Che",26,"homme","romantic","rap","taureau","hetero","americain")
 
 Jessica_Noe = Caracteristiques\
-            (19,"femme","fetard","rock","gemaux","hetero","espagnol")
+            ("Jessica Noe",19,"femme","fetard","rock","gemaux","hetero","espagnol")
 
 Juliette_Suin = Caracteristiques\
-            (18,"femme","agressif","pop","taureau","hetero", "francais")
+            ("Juliette Suin",18,"femme","agressif","pop","taureau","hetero", "francais")
 
 personnages = [Jean_Pierre,\
                Jessica_Noe,\
@@ -227,9 +227,6 @@ Nom_prenom = Profil(\
                  check_nationality())
 
 
-##Nom_prenom = Profil(25,"femme","passif","rap","poisson","gay","americain")
-print(str(Nom_prenom.Age))
-
 profil_utilisateur =\
     "Votre profil: \n"\
     "Vous êtes un(e) "\
@@ -245,30 +242,43 @@ profil_utilisateur =\
     +"Vous êtes "\
     +str(Nom_prenom.Orientation_sex)\
     +" et vous êtes "\
-    +str(Nom_prenom.Origine)
+    +str(Nom_prenom.Origine)\
 
+print("--"*30)
 print(profil_utilisateur)
-
-
-
+print("--"*30)
 
 
 
 definitiv_match = []
-def main(possible_match):
-    for i in range(len(possible_match)):
+def main(i,possible_match):
+    if possible_match == [None,[]] or i> len(possible_match):
+        print( definitiv_match)
+    else:
         possible_match[i].presenter()
+
         print("Voulez vous choisir ce profil comme un match ou un non match: ")
-        choix = input("1 pour match, 2 pour non match")
-        if choix ==1:
+        choix = input("1 pour matcher, 2 pour ne pas matcher")
+        if choix == 1:
             definitiv_match.append(possible_match[i])
+            possible_match.remove(possible_match[i])
+            main(i+1 ,possible_match)
+
         else:
             possible_match.remove(possible_match[i])
+            print("Vous avez fait le bon choix ;)")
+            print("--"*15)
+            main(i+1 ,possible_match)
+
+
+'''
+    for i in range(possible_match):
+        possible_match[i].presenter()
 
 
 
 
-
+'''
 
 
 
@@ -304,8 +314,7 @@ not_possible_match = []
 def check_for_match(Nom_prenom,personnages):
     #condition d'arrêt
     if personnages == []:
-        print("Les personnes pouvant match avec vous sont: " +str(possible_match))
-        return main(possible_match)
+        return main(0,possible_match)
     else:
         someone = random.choice(personnages)
         #definie le personnage comparé au profil uilisateur
@@ -318,10 +327,6 @@ def check_for_match(Nom_prenom,personnages):
         c = someone.origine#origine personnage
         utilisateur = Nom_prenom.Age
         mec = someone.age
-        texte = str(Nom_prenom.Age),someone.age
-        print(texte)
-        print(type(mec))
-        print(type(utilisateur))
         #Verifie si meme tranche d'age
         if utilisateur <= 28 and mec < 28:
 
