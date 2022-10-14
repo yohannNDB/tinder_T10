@@ -119,7 +119,7 @@ __3)Les caractéristiques possibles:__
 Nous avons essayé de mettre un nombre de possibilités satisfaisante  à chaque fois pouvant représenter des caractéristiques souvent retrouvées. Nous sommes désolé si vous ne pouvez pas reproduire à la perfection votre profil :)
 * l'age(entre [18:99])-->-->```self.age = age```
 * le genre (homme, femme)-->```self.genre=  genre```
-* le caractère (passif, depressif, fetard, romantique)-->```self.caractere = caractere```
+* le caractère (passif, depressif, fetard, romantique,agressif)-->```self.caractere = caractere```
 * le signe astrologique( poisson, vierge, taureau, capricorne)-->```self.astro = astro```
 * le genre musical (rock,rap,electro, pop)-->```self.music_genre = music_genre```
 * son orientation sexuel (hetero, gay ,lesbienne)-->```self.orientation = orientation```
