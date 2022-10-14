@@ -30,7 +30,8 @@ Après avoir échoué avec panda, nous nous sommes orientés sur une méthode qu
 * Alexandre s'est occupé de créer la __class Caracteristiques__ (celle qui définit les caractéristiques des personnages prédéfinis)
 ```
 class Caracteristiques():
-    def __init__(self,age,genre,caractere, music_genre, astro, orientation, origine):
+    def __init__(self,name,age,genre,caractere, music_genre, astro, orientation, origine):
+        self.name = name
         self.age = age
         self.genre=genre
         self.caractere= caractere
@@ -45,10 +46,10 @@ class Caracteristiques():
 
 ```
 Jean_Pierre = Caracteristiques\
-    (18,"homme","romantic","rap","taureau","gay","americain")
+    ("Jean Pierre",18,"homme","romantic","rap","taureau","gay","americain")
 
 Magg_Azine = Caracteristiques\
-     (87,"femme","agressif","rock","vierge","lesbienne","americain")
+     ("Magg Azine",87,"femme","agressif","rock","vierge","lesbienne","americain")
      
 ```
 * Yohann s'est occupé de la __class Profil__(celle qui s'occupe du profil utilisateur)
