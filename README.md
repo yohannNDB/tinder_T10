@@ -86,7 +86,7 @@ Nom_prenom = Profil(\
                  check_nationality())
 
 ```
-* Nos premières séances étaient dédiées à créer nos personnages, et permettre a l'utilisateur de faire son profil.
+* Nos premières séances étaient dédiées à créer nos personnages, et permettre à l'utilisateur de faire son profil.
 
 ```
 #vérifie l'age de la personne qui veut s'inscrire
