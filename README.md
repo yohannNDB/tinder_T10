@@ -10,7 +10,7 @@
 
 
 ## Présentation de Tinder:
-- [wikidia de Tinder](https://fr.wikipedia.org/wiki/Tinder)
+- [wikipedia de Tinder](https://fr.wikipedia.org/wiki/Tinder)
 - [site de tinder](https://tinder.com/fr/about)
 
 
